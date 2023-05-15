@@ -41,9 +41,22 @@ public class BoardController {
 	@GetMapping
 	public List<BoardDto> list(@ApiParam(value = "게시글을 얻기위한 부가정보.", required = true) BoardParameterDto boardParameterDto) throws Exception {
 		logger.debug("list parameter boardType : {}", boardParameterDto);
-		List<BoardDto> list = boardService.listArticle(boardParameterDto); //test시 testmap사용
-		//페이지네이션 처리 보류, 현재는 리스트를 listsize만큼 가져옴
-		//PageNavigation pageNavigation = boardService.makePageNavigation(map);
+		if(boardParameterDto.getType()=="0") {
+			boardParameterDto.setSpp(20);
+		} else {
+			boardParameterDto.setSpp(15);
+		}
+		List<BoardDto> list = boardService.listArticle(boardParameterDto);
+		//		type 0일때 20 1일때 15로 글 개수 고정 ###############
+		
+//		페이지네이션 처리 보류, 이전에는 model&view를 사용하요 pageNavigation 전달
+		//left pgno
+		// right pgno
+		// pgno
+		//left pg = true; 
+		//right pg = true;
+		//endpg = ture;
+//		PageNavigation pageNavigation = boardService.makePageNavigation(map);
 //		mav.addObject("articles", list);
 //		mav.addObject("navigation", pageNavigation);
 //		mav.addObject("pgno", map.get("pgno"));
@@ -59,13 +72,9 @@ public class BoardController {
 	public String write(BoardDto boardDto, HttpSession session,
 			RedirectAttributes redirectAttributes) throws Exception {
 		logger.debug("write boardDto : {}", boardDto);
-
-//		boardDto.setBoardType(0);//test
-//		boardDto.setContent("내용");
-//		boardDto.setSubject("제목");
-//		boardDto.setUserNo(7);
 		boardService.writeArticle(boardDto);
-//		redirectAttributes.addAttribute("pgno", "1"); //pagination
+		
+//		redirectAttributes.addAttribute("pgno", "1"); //paging 처리
 //		redirectAttributes.addAttribute("key", "");
 //		redirectAttributes.addAttribute("word", "");
 		//return "redirect:/article/list"; //글 작성 후 1페이지로 redirect
@@ -78,8 +87,8 @@ public class BoardController {
 			throws Exception {
 		logger.debug("view boardNo : {}", boardNo);
 		BoardDto boardDto = boardService.getArticle(boardNo);
-//		model.addAttribute("article", boardDto); 
-//		model.addAttribute("pgno", map.get("pgno")); //paging 처리
+//		model.addAttribute("article", boardDto);  	//paging 처리
+//		model.addAttribute("pgno", map.get("pgno")); 
 //		model.addAttribute("key", map.get("key"));
 //		model.addAttribute("word", map.get("word"));
 		return boardDto;

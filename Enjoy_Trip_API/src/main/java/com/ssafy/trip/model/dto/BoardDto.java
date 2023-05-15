@@ -51,16 +51,17 @@ public class BoardDto {
 	public void setUserNo(int userNo) {
 		this.userNo = userNo;
 	}
-	public String getUserName() {
+	
+	public String getNickname() {
 		return nickname;
 	}
-	public void setUserName(String userName) {
-		this.nickname = userName;
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
 	}
 	@Override
 	public String toString() {
 		return "BoardDto [boardNo=" + boardNo + ", boardType=" + boardType + ", createTime=" + createTime + ", subject="
-				+ subject + ", content=" + content + ", likeCount=" + likeCount + ", userNo=" + userNo + ", userName="
+				+ subject + ", content=" + content + ", likeCount=" + likeCount + ", userNo=" + userNo + ", nickName="
 				+ nickname + "]";
 	}
 	

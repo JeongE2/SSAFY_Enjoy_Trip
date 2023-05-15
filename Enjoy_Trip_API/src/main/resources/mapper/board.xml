@@ -27,7 +27,7 @@
 
 	<select id="listArticle" parameterType="map" resultMap="board">
 		select b.board_no, b.board_type, b.subject subject, b.content content,
-		b.create_time create_time, count(bl.like_no) like_count, b.user_no, u.nickname
+		date_format(b.create_time, '%Y-%m-%d %H:%i') create_time, count(bl.like_no) like_count, b.user_no, u.nickname
 		from board b
 		left join board_like bl
 		on b.board_no = bl.board_no

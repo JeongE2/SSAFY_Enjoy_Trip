@@ -41,7 +41,7 @@ public class CommentController {
 	public String write(CommentDto commentDto) {
 		logger.debug("write boardNo : {}", commentDto.getBoardNo());
 		commentService.write(commentDto);
-		return "댓글 작성 성공";
+		return "success";
 	}
 	
 	@PutMapping("")

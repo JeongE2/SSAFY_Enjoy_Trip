@@ -88,9 +88,6 @@ public class BoardController {
 		logger.debug("view boardNo : {}", boardNo);
 		BoardDto boardDto = boardService.getArticle(boardNo);
 //		model.addAttribute("article", boardDto);  	//paging 처리
-//		model.addAttribute("pgno", map.get("pgno")); 
-//		model.addAttribute("key", map.get("key"));
-//		model.addAttribute("word", map.get("word"));
 		return boardDto;
 	}
 
@@ -101,9 +98,6 @@ public class BoardController {
 		logger.debug("modify boardDto : {}", boardDto);
 		boardService.modifyArticle(boardDto);
 //		redirectAttributes.addAttribute("pgno", map.get("pgno")); //paging 처리
-//		redirectAttributes.addAttribute("key", map.get("key"));
-//		redirectAttributes.addAttribute("word", map.get("word"));
-//		return "redirect:/article/list";
 		return "success";
 	}
 
@@ -113,9 +107,6 @@ public class BoardController {
 		logger.debug("delete articleNo : {}", boardNo);
 		boardService.deleteArticle(boardNo);
 //		redirectAttributes.addAttribute("pgno", map.get("pgno"));//paging 처리
-//		redirectAttributes.addAttribute("key", map.get("key"));
-//		redirectAttributes.addAttribute("word", map.get("word"));
-//		return "redirect:/article/list";
 		return "success";
 	}
 }

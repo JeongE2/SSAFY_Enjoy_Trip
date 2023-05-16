@@ -27,7 +27,7 @@
 		set content = #{content}
 		where comment_no = #{commentNo}
 	</update>
-	<delete id="delete">
+	<delete id="delete" parameterType="int">
 		delete from board_comment
 		where comment_no = #{commentNo}
 	</delete>

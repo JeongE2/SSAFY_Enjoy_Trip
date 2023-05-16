@@ -1,10 +1,13 @@
-package com.ssafy.trip.service;
+package com.ssafy.trip.model.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
+
 import com.ssafy.trip.model.dto.ReviewDto;
 
-public interface AttractionReviewService {
+@Mapper
+public interface AttractionReviewMapper {
 
 	List<ReviewDto> list(int attractionNo);
 

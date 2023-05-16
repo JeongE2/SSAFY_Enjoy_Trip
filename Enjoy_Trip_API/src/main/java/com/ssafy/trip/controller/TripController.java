@@ -33,7 +33,7 @@ public class TripController {
 		return tripDto;
 	}
 	
-	@GetMapping("/plan/{planNo}")
+	@GetMapping("/list/{planNo}")
 	public List<TripDto> list(@PathVariable("planNo") int planNo) throws Exception {
 		logger.debug("list PlanNo : {}", planNo);
 		List<TripDto> list = tripService.list(planNo);

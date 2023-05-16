@@ -1,5 +1,7 @@
 package com.ssafy.trip.service;
 
+import java.util.List;
+
 import com.ssafy.trip.model.dto.PlanDto;
 
 public interface PlanService {
@@ -11,5 +13,7 @@ public interface PlanService {
 	void modify(PlanDto planDto);
 
 	void delete(int planNo);
+
+	List<PlanDto> list();
 
 }

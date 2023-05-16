@@ -1,5 +1,7 @@
 package com.ssafy.trip.controller;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -29,6 +31,13 @@ public class PlanController {
 		logger.debug("get planNo : {}", planNo);
 		PlanDto PlanDto = planService.get(planNo);
 		return PlanDto;
+	}
+	
+	@GetMapping("/list")
+	public List<PlanDto> list() throws Exception {
+		logger.debug("get all list of plan");
+		List<PlanDto> list = planService.list();
+		return list;
 	}
 	
 	@PostMapping

@@ -32,9 +32,9 @@
 		update trip
 		set order = #{order}, memo = #{memo}, plan_no = #{planNo}, attraction_no = #{attractionNo}
 		where trip_no = #{tripNo}
-	</update><!-- 수정!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	</update>
 	<delete id="delete" parameterType="int">
 		delete from trip
-		where comment_no = #{commentNo}
-	</delete> -->
+		where trip_no = #{tripNo}
+	</delete>
 </mapper>

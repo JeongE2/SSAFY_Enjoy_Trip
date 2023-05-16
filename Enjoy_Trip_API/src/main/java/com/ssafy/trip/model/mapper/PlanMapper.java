@@ -1,5 +1,7 @@
 package com.ssafy.trip.model.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import com.ssafy.trip.model.dto.PlanDto;
@@ -14,5 +16,7 @@ public interface PlanMapper {
 	void modify(PlanDto planDto);
 
 	void delete(int planNo);
+
+	List<PlanDto> list();
 
 }

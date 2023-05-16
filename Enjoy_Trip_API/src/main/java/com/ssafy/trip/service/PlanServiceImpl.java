@@ -1,5 +1,7 @@
 package com.ssafy.trip.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.ssafy.trip.model.dto.PlanDto;
@@ -31,6 +33,11 @@ public class PlanServiceImpl implements PlanService {
 	@Override
 	public void delete(int planNo) {
 		planMapper.delete(planNo);
+	}
+
+	@Override
+	public List<PlanDto> list() {
+		return planMapper.list();
 	}
 
 }

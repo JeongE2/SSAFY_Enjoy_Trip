@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.32, for Win64 (x86_64)
 --
--- Host: 192.168.31.79    Database: enjoy_trip
+-- Host: localhost    Database: enjoy_trip
 -- ------------------------------------------------------
 -- Server version	8.0.32
 
@@ -34,7 +34,7 @@ CREATE TABLE `plan` (
   PRIMARY KEY (`plan_no`),
   KEY `fk_plan_user_idx` (`user_no`),
   CONSTRAINT `fk_plan_user` FOREIGN KEY (`user_no`) REFERENCES `user` (`user_no`) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +43,7 @@ CREATE TABLE `plan` (
 
 LOCK TABLES `plan` WRITE;
 /*!40000 ALTER TABLE `plan` DISABLE KEYS */;
-INSERT INTO `plan` VALUES (1,'2023-05-16 08:27:01','첫번째 여행계획','멋진 여행계획을 만들어봤습니다.','2023-06-16 08:27:01','2023-06-23 08:27:01',0,1),(2,'2023-05-10 08:32:16','두번째 여행계획','미친 여행계획을 만들어봤습니다.','2023-06-26 08:32:16','2023-06-28 08:32:16',0,2);
+INSERT INTO `plan` VALUES (1,'2023-05-16 08:27:01','첫번째 여행계획','멋진 여행계획을 만들어봤습니다.','2023-06-16 08:27:01','2023-06-23 08:27:01',0,1),(2,'2023-05-10 08:32:16','두번째 여행계획','미친 여행계획을 만들어봤습니다.','2023-06-26 08:32:16','2023-06-28 08:32:16',0,2),(3,'2023-05-16 15:49:48','세번째 여행계획','드디어 세번재 여행계획을 짜보았는데요. 짧게 1박 2일로 계획했습니다.','2023-08-17 08:27:01','2023-08-16 08:27:01',0,3),(4,'2023-05-16 15:50:35','네번째 여행계획','와 네번째 여행계획! 대단해','2023-09-16 15:00:00','2023-09-15 15:00:00',0,3);
 /*!40000 ALTER TABLE `plan` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-16 17:59:36
+-- Dump completed on 2023-05-17  0:51:21
